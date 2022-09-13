@@ -10,6 +10,7 @@ int main() {
     int chute;
     int tentativas = 0;
     bool nao_acertou = true;
+    double pontos = 1000.0;
 
     while (nao_acertou) {
         tentativas++;
@@ -22,6 +23,9 @@ int main() {
         bool maior = chute > NUMERO_SECRETO;
         bool menor = chute < NUMERO_SECRETO;
 
+        double pontos_perdidos = abs(chute - NUMERO_SECRETO)/2.0;
+        pontos -= pontos_perdidos;
+
         if (maior) {
             cout << "O valor digitado é maior que o número secreto!" <<endl;
         } else if (menor) {
@@ -33,6 +37,7 @@ int main() {
     }
 
     cout << "Número de tentativas " <<tentativas <<endl;
+    cout << "Sua pontuação final foi " <<pontos << " pontos." <<endl;
 
     cout <<"**************************************" << endl;
     cout <<"*            FIM DE JOGO!            *" << endl;
