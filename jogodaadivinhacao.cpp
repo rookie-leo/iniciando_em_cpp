@@ -26,6 +26,12 @@ int main() {
         cout <<"Letra digitada não corresponde aos niveis de dificuldade!" <<endl;
         nao_acertou = false;
         pontos = 0.0;
+
+        cout.precision(2);
+        cout << fixed;
+        cout << "Sua pontuação final foi " <<pontos << " pontos." <<endl;
+
+        exit(0);
     }
 
     for (tentativas = 1; tentativas <= numero_tentativas; tentativas++) {
