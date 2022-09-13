@@ -1,4 +1,6 @@
 #include<iostream>
+#include<cstdlib>
+#include<ctime>
 using namespace std;
 
 int main() {
@@ -6,7 +8,8 @@ int main() {
     cout <<"* Bem-vindos ao jogo da adivinhação! *" << endl;
     cout <<"**************************************" << endl;
 
-    const int NUMERO_SECRETO = 45;
+    srand(time(NULL));
+    const int NUMERO_SECRETO = rand() % 100;
     int chute, tentativas, numero_tentativas;
     bool nao_acertou = true;
     double pontos = 1000.0;
