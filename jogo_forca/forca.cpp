@@ -28,7 +28,6 @@ bool letra_existe(char chute) {
             return true;
         }
     }
-
     return false;
 }
 
@@ -77,6 +76,14 @@ void verifica_chute() {
     }
 }
 
+void fim_de_jogo() {
+    if (nao_acertou()) {
+        cout << "Você perdeu! Tente novamente!" << endl;
+    } else {
+        cout << "Você ganhou! Parabéns!" << endl;
+    }
+}
+
 int main() {
     cabecalho();
 
@@ -89,14 +96,9 @@ int main() {
 
         verifica_chute();
         cout << endl;
-         
     }
 
-    if (nao_acertou()) {
-        cout << "Você perdeu! Tente novamente!" << endl;
-    } else {
-        cout << "Você ganhou! Parabéns!" << endl;
-    }
+    fim_de_jogo();
 
     roda_pe();
 }
